@@ -1,12 +1,12 @@
-PIC Microcontroller Projects: Assembly Language for PIC18F452
+# PIC Microcontroller Projects: Assembly Language for PIC18F452
 Welcome to a collection of PIC18F452 projects developed using assembly language. These projects are designed to be implemented using the Proteus and MPLAB IDE software. The assembly programming language is utilized for coding, providing a detailed insight into the functionality of the PIC microcontroller.
 
-Materials Required:
+## Materials Required:
 Proteus Software
 MPLAB IDE
 PIC18F452 Microcontroller
 Assembly Programming Language Skills
-How to Use:
+### How to Use:
 Create a New Project:
 Start by creating a new project in MPLAB IDE. Select the target platform as PIC18F452.
 
@@ -22,7 +22,7 @@ Upload the generated hex file into the PIC18F452 microcontroller using a suitabl
 Simulation Testing:
 The projects have undergone thorough testing in simulations, producing reliable and accurate results. Ensure that the Proteus software is used for simulation testing.
 
-Important Notes:
+## Important Notes:
 Code Modification:
 If you encounter any issues or bugs in the code, feel free to modify and improve as needed. The projects are open to customization for specific requirements.
 
