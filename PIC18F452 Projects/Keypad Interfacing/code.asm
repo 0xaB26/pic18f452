@@ -49,20 +49,18 @@ WAIT
 INTERRUPT
 			; TESTING THE FLAGS INTERRUPT
 			BTFSC		INTCON,RBIF
-			RCALL		TEST
+			GOTO		TEST
 			BTFSC		INTCON,TMR0IF
-			BRA			FUNCTION
-			RETFIE
+			GOTO		FUNCTION
 ;-----------------------------------------
 TEST
 			; WHICH COLUMN IS ACTIVE
 			BTFSS		PORTC,0
-			RCALL		HERE
+			GOTO		HERE
 			BTFSS		PORTC,1
-			RCALL		NEXT
+			GOTO		NEXT
 			BTFSS		PORTC,2
-			RCALL		BELOW
-			RETURN
+			GOTO		BELOW
 ;---------------------------------------
 HERE
 			; WHICH THE PIN CHANGES ITS STATE
@@ -74,7 +72,6 @@ HERE
 			BRA			NUMBER9
 			BTFSS		PORTB,7
 			BRA			CLEAR
-			RETURN
 ;--------------------------------------
 NEXT
 			; WHICH THE PIN CHANGES ITS STATE
@@ -84,7 +81,6 @@ NEXT
 			BRA			NUMBER5
 			BTFSS		PORTB,6
 			BRA			NUMBER8
-			RETURN
 ;--------------------------------------
 BELOW
 			; WHICH THE PIN CHANGES ITS STATE
@@ -94,7 +90,6 @@ BELOW
 			BRA			NUMBER4
 			BTFSS		PORTB,6
 			BRA			NUMBER7
-			RETURN
 ;------------ ACTIVING ONE COLUMN PER 50 MS --------------------------
 FUNCTION
 			BCF			INTCON,TMR0IF
@@ -112,8 +107,7 @@ FUNCTION
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-FINISH
-			RETFIE
+			BRA			FINALE
 FIRST
 			MOVLW		0x05
 			MOVWF		VALUE
@@ -123,7 +117,7 @@ FIRST
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-			BRA			FINISH
+			BRA			FINALE
 KIKAG
 			MOVLW		0x06
 			MOVWF		VALUE
@@ -133,7 +127,7 @@ KIKAG
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-			BRA			FINISH									
+			BRA			FINALE									
 ;------------- SUBROUTINE FOR SENDING 1 TO COUNTER -------------------------
 NUMBER1
 			BCF			INTCON,RBIF
@@ -210,5 +204,3 @@ FINALE
 ;------------- END SOURCE FILE -------------------------------------------------
 			END
 ;--------------------------------------------------------------------------------
-
-			
