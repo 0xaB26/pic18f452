@@ -1,12 +1,12 @@
-PIC Microcontroller Projects: Assembly Language for PIC18F452
+# PIC Microcontroller Projects: Assembly Language for PIC18F452
 Welcome to a comprehensive collection of PIC18F452 projects developed using assembly language. These projects are crafted for implementation with Proteus and MPLAB IDE, utilizing the assembly programming language to provide a detailed understanding of PIC microcontroller functionality.
 
-Materials Required:
+### Materials Required:
 Proteus Software
 MPLAB IDE
 PIC18F452 Microcontroller
 Assembly Programming Language Skills
-How to Use:
+### How to Use:
 Create a New Project:
 Initiate a new project in MPLAB IDE, selecting the target platform as PIC18F452.
 
@@ -22,7 +22,7 @@ Use a suitable programmer or tool to upload the generated hex file into the PIC1
 Simulation Testing:
 Thoroughly test the projects in simulations using the Proteus software to ensure reliable and accurate results.
 
-Table of Content:
+### Table of Content:
 Project 1: 7 Segment Display
 Display numbers from 00 to 99 with advanced features like clearing the screen and stopping the numbers (similar to a stopwatch). This project utilizes interrupts for enhanced efficiency.
 
@@ -35,7 +35,7 @@ Interface a matrix of switches with a 7-segment display. When a button is presse
 Project 4: Shift LEDs
 Shift LEDs one by one from the Least Significant Bit (LSB) to the Most Significant Bit (MSB).
 
-Important Notes:
+## Important Notes:
 Code Modification:
 Feel free to modify and improve the code if any issues or bugs are encountered. The projects are open for customization to meet specific requirements.
 
