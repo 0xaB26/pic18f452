@@ -39,6 +39,10 @@ Interface a matrix of switches with a 7-segment display. When a button is presse
 Project 4: Shift LEDs
 Shift LEDs one by one from the Least Significant Bit (LSB) to the Most Significant Bit (MSB).
 
+Project 5 : Traffic light :
+Using three leds (Red = 60 s, Green = 30 s, Yellow = 5 s) and Control them via the Pic18f452.
+The timing can be changed by changing the Timer0 value.
+
 ## Important Notes:
 Code Modification:
 Feel free to modify and improve the code if any issues or bugs are encountered. The projects are open for customization to meet specific requirements.
