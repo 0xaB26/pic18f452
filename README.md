@@ -16,7 +16,7 @@ Welcome to a comprehensive collection of PIC18F452 projects developed using asse
 - Switches
 - Bcd/7 segment decoder
 - Resistors
-- 
+
 ### How to Use:
 Create a New Project:
 Initiate a new project in MPLAB IDE, selecting the target platform as PIC18F452.
