@@ -6,10 +6,17 @@ Welcome to a comprehensive collection of PIC18F452 projects developed using asse
 
 
 ### Materials Required:
-Proteus Software
-MPLAB IDE
-PIC18F452 Microcontroller
-Assembly Programming Language Skills
+- Proteus Software
+- MPLAB IDE
+- PIC18F452 Microcontroller
+- Assembly Programming Language Skills
+- 14-segment display
+- 7-segment display
+- Leds
+- Switches
+- Bcd/7 segment decoder
+- Resistors
+- 
 ### How to Use:
 Create a New Project:
 Initiate a new project in MPLAB IDE, selecting the target platform as PIC18F452.
@@ -42,6 +49,11 @@ Shift LEDs one by one from the Least Significant Bit (LSB) to the Most Significa
 Project 5 : Traffic light :
 Using three leds (Red = 60 s, Green = 30 s, Yellow = 5 s) and Control them via the Pic18f452.
 The timing can be changed by changing the Timer0 value.
+
+
+Project 6: ASCII Character Display
+
+This project involves displaying ASCII characters, specifically the alphabet from A to Z, using a 14-segment display. With 26 alphabetic characters in mind, the project incorporates buttons where each button corresponds to two letters, selected by toggling a switch.
 
 ## Important Notes:
 Code Modification:
