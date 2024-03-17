@@ -17,7 +17,7 @@
 ;
 ;******************************************************************************
 				CONFIG		WDT = OFF
-				#INCLUDE	"p18f452.inc"
+				#INCLUDE	<p18f452.inc>
 				LIST		P = 18F452
 VALUE			EQU			0x00
 COUNTER			EQU			0x01
