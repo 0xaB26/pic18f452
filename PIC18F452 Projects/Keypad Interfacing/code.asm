@@ -3,7 +3,7 @@
 ; THE AUTHOR : DALI FETHI ABDELLATIF 15/02/2024
 ;----------- ASM SOURCE FILE ----------------------------------
 			CONFIG		WDT = OFF
-			#INCLUDE	"p18f452.inc"
+			#INCLUDE	<p18f452.inc>
 			LIST		P = 18F452
 COUNTER		EQU			0x00
 VALUE		EQU			0x01
