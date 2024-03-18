@@ -46,7 +46,12 @@ MAIN
 					MOVLW			0xD0
 					MOVWF			TMR0L
 					BSF				T0CON,TMR0ON
-					CLRF			VALUE
+					MOVLW			0x01	
+					MOVWF			VALUE
+					BSF				PORTA,RA3
+					BSF				PORTA,RA2
+					BSF				PORTA,RA1
+					BCF				PORTA,RA0
 ;--------------------- KEEP BRANCHING UNTIL INTERRUPT OCCURS ----------------------------------------
 WAIT
 					NOP
@@ -118,34 +123,33 @@ ACTIVE
 					BZ				THIRD
 					MOVLW			0x00
 					MOVWF			VALUE
-					BSF				PORTA,RA3
-					BSF				PORTA,RA2
-					BSF				PORTA,RA1
-					BCF				PORTA,RA0
-					RETFIE
-FIRST
-					MOVLW			0x01
-					MOVWF			VALUE
 					BCF				PORTA,RA3
 					BSF				PORTA,RA2
 					BSF				PORTA,RA1
 					BSF				PORTA,RA0
 					RETFIE
+FIRST
+					MOVLW			0x01
+					MOVWF			VALUE
+					BSF				PORTA,RA3
+					BSF				PORTA,RA2
+					BSF				PORTA,RA1
+					BCF				PORTA,RA0
+					RETFIE
 SECOND
 					MOVLW			0x02
 					MOVWF			VALUE
 					BSF				PORTA,RA3
-					BCF				PORTA,RA2
-					BSF				PORTA,RA1
+					BSF				PORTA,RA2
+					BCF				PORTA,RA1
 					BSF				PORTA,RA0
 					RETFIE	
 THIRD
 					MOVLW			0x03
 					MOVWF			VALUE
-					MOVLW			0x7D
 					BSF				PORTA,RA3
-					BSF				PORTA,RA2
-					BCF				PORTA,RA1
+					BCF				PORTA,RA2
+					BSF				PORTA,RA1
 					BSF				PORTA,RA0
 					RETFIE			
 ;---------------------- SUBROUTINE FOR DISPLAYING ASCII CODE OF (A AND B) ---------------------------------------
