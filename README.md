@@ -53,13 +53,7 @@ This project uses PIC18F452 and external switches with an LCD 16x2. It uses port
 
 #### Important Notes:
 - Code Modification:
-Feel free to modify and improve the code if any issues or bugs are encountered. The projects are open for customization to meet specific requirements.
-
-- Testing and Verification:
-It is highly recommended to test the projects in a simulation environment before deploying them onto physical hardware to identify and address potential issues.
-
-- Community Collaboration:
-Enhance and optimize the projects? Share your improvements with the community to foster collaboration and the development of more robust PIC microcontroller applications.
+Feel free to modify and improve the code if any issues or bugs are encountered. 
 
 - Learning Purpose:
 These projects are intended for learning purposes to cover some basic peripherals of the PIC18F452 microcontroller.
