@@ -54,6 +54,7 @@ INTERRUPT
 			GOTO		FUNCTION
 ;-----------------------------------------
 TEST
+			MOVF		PORTB,W
 			; WHICH COLUMN IS ACTIVE
 			BTFSS		PORTC,0
 			GOTO		HERE
@@ -72,6 +73,7 @@ HERE
 			BRA			NUMBER9
 			BTFSS		PORTB,7
 			BRA			CLEAR
+			GOTO			FINALE
 ;--------------------------------------
 NEXT
 			; WHICH THE PIN CHANGES ITS STATE
@@ -81,6 +83,7 @@ NEXT
 			BRA			NUMBER5
 			BTFSS		PORTB,6
 			BRA			NUMBER8
+			GOTO			FINALE
 ;--------------------------------------
 BELOW
 			; WHICH THE PIN CHANGES ITS STATE
@@ -90,15 +93,16 @@ BELOW
 			BRA			NUMBER4
 			BTFSS		PORTB,6
 			BRA			NUMBER7
+			GOTO			FINALE
 ;------------ ACTIVING ONE COLUMN PER 50 MS --------------------------
 FUNCTION
-			BCF			INTCON,TMR0IF
+			BCF		INTCON,TMR0IF
 			MOVF		VALUE,W
 			XORLW		0x06
-			BZ			FIRST
+			BZ		FIRST
 			MOVF		VALUE,W
 			XORLW		0x03
-			BZ			KIKAG
+			BZ		KIKAG
 			MOVLW		0x03
 			MOVWF		VALUE
 			MOVLW		0x05
@@ -107,7 +111,7 @@ FUNCTION
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-			BRA			FINALE
+			BRA		FINALE
 FIRST
 			MOVLW		0x05
 			MOVWF		VALUE
@@ -117,7 +121,7 @@ FIRST
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-			BRA			FINALE
+			BRA		FINALE
 KIKAG
 			MOVLW		0x06
 			MOVWF		VALUE
@@ -127,21 +131,17 @@ KIKAG
 			MOVWF		TMR0H
 			MOVLW		0xB0
 			MOVWF		TMR0L
-			BRA			FINALE									
+			BRA		FINALE									
 ;------------- SUBROUTINE FOR SENDING 1 TO COUNTER -------------------------
 NUMBER1
-			BCF			INTCON,RBIF
-			MOVF		PORTB,W
 			MOVLW		0x01
 			MOVWF		COUNTER
-			BRA			FINALE
+			BRA		FINALE
 ;------------- SUBROUTINE FOR SENDING 2 TO COUNTER -------------------------
 NUMBER2
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x02
 			MOVWF		COUNTER
-			BRA			FINALE
+			BRA		FINALE
 ;------------- SUBROUTINE FOR SENDING 3 TO COUNTER -------------------------
 NUMBER3
 			MOVF		PORTB,W
@@ -151,55 +151,42 @@ NUMBER3
 			BRA			FINALE
 ;------------- SUBROUTINE FOR SENDING 4 TO COUNTER -------------------------
 NUMBER4
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x04
 			MOVWF		COUNTER
 			BRA			FINALE
 ;------------- SUBROUTINE FOR SENDING 5 TO COUNTER ---------------------------
 NUMBER5
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x05
 			MOVWF		COUNTER
 			BRA			FINALE
 ;------------- SUBROUTINE FOR SENDING 6 TO COUNTER ---------------------------
 NUMBER6
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x06
 			MOVWF		COUNTER
 			BRA			FINALE
 ;------------- SUBROUTINE FOR SENDING 7 TO COUNTER ---------------------------
 NUMBER7
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x07
 			MOVWF		COUNTER
 			BRA			FINALE
 ;------------- SUBROUTINE FOR SENDING 8 TO COUNTER ----------------------------
 NUMBER8
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x08
 			MOVWF		COUNTER
-			BRA			FINALE
+			BRA		FINALE
 ;------------- SUBROUTINE FOR SENDING 9 TO COUNTER ----------------------------
 NUMBER9
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x09
 			MOVWF		COUNTER
-			BRA			FINALE
+			BRA		FINALE
 ;------------- SUBROUTINE FOR CLEARING THE OUTPUT ZERO ----------------------------
 CLEAR
-			MOVF		PORTB,W
-			BCF			INTCON,RBIF
 			MOVLW		0x00
 			MOVWF		COUNTER
-			BRA			FINALE
+			BRA		FINALE
 ;-------------------------------------------------------------------------------
 FINALE
+			BCF		INTCON,RBIF
 			RETFIE
 ;------------- END SOURCE FILE -------------------------------------------------
 			END
