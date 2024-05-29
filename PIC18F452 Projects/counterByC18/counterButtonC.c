@@ -36,7 +36,7 @@ void function(void)
 	{
 		INTCONbits.INT0IF = 0;
 		++counter;
-		if(counter == 99)
+		if(counter == 100)
 			counter = 0;
 	}	
 }
