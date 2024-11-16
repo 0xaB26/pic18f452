@@ -15,5 +15,5 @@ Microcontrollers can be programmed using the following methods:
 - Simulator: Proteus ISIS Simulator.
 
 3)- Features :
-Tested and validated codes in Proteus.
-Covers fundamental concepts in microcontroller programming.
+- Tested and validated codes in Proteus.
+- Covers fundamental concepts in microcontroller programming.
